@@ -1,0 +1,8 @@
+{
+  "qubits": [3, 6],
+  "gate_set": ["h", "s", "sdg", "t", "tdg", "x", "y", "z", "cx", "cz", "swap"],
+  "primary_metric": "t_count",
+  "budget_steps": 64,
+  "equivalence": "exact_symbolic_up_to_global_phase",
+  "splits": {"train": ["random", "mirror"], "validation": ["motif"], "test": ["ladder", "qft_like"]}
+}
