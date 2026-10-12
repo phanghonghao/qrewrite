@@ -4,5 +4,6 @@ __pycache__/
 build/
 dist/
 .venv/
+AAAtmp/
 results/*.jsonl
 results/checkpoint.json
