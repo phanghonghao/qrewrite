@@ -14,7 +14,7 @@ CHECKPOINT = ROOT / "results" / "checkpoint.json"
 def run_trial(seed=0, split="validation", budget=64, reward_mode="terminal"):
     started = time.perf_counter()
     policy = TabularPolicy(seed=seed, reward_mode=reward_mode)
-    rows = evaluate_policy(policy, split, budget, seed)
+    rows = evaluate_policy(policy, split, budget, seed, dataset_path=ROOT / "data" / "circuits.jsonl")
     summary = aggregate(rows)
     accepted = summary["equivalence_pass_rate"] == 1.0
     trial = {"revision": "working-tree", "seed": seed, "runtime_s": time.perf_counter() - started,
